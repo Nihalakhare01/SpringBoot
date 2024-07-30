@@ -10,21 +10,28 @@ import java.sql.SQLOutput;
 @SpringBootApplication
 public class Springframework1Application implements CommandLineRunner {
 
-	@Autowired
-	Apple obj;
+//	@Autowired
+//	Apple obj;
+//
+//	@Autowired
+//	Apple obj2;
 
 	@Autowired
-	Apple obj2;
+	DBService dbservice;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Springframework1Application.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		obj.eatapple();
-		obj2.eatapple();
 
-		System.out.println(obj.hashCode());
-		System.out.println(obj2.hashCode());
+		System.out.println(dbservice.getdata());
+
+//		obj.eatapple();
+//		obj2.eatapple();
+//
+//		System.out.println(obj.hashCode());
+//		System.out.println(obj2.hashCode());
 	}
 }
